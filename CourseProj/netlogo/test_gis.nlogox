@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<model version="NetLogo 7.0.4" snapToGrid="false">
+  <code><![CDATA[extensions [ gis ]
+
+globals [
+  boundary-dataset
+  roads-dataset
+  hubs-dataset
+  pop-dataset
+]
+
+to setup
+  clear-all
+  set boundary-dataset gis:load-dataset "data/nedumangad_boundary.shp"
+  set roads-dataset gis:load-dataset "data/nedumangad_roads.shp"
+  set hubs-dataset gis:load-dataset "data/nedumangad_hubs.shp"
+  set pop-dataset gis:load-dataset "data/nedumangad_population.asc"
+  gis:set-world-envelope (gis:envelope-union-of
+    (gis:envelope-of boundary-dataset)
+    (gis:envelope-of roads-dataset)
+    (gis:envelope-of pop-dataset))
+  print "GIS Datasets Loaded and Envelope Set Successfully!"
+  gis:set-drawing-color red
+  gis:draw boundary-dataset 1
+  print "Boundary drawn successfully!"
+  reset-ticks
+end
+]]></code>
+  <widgets>
+    <view x="10" wrappingAllowedX="false" y="60" frameRate="30.0" minPycor="0" height="400" showTickCounter="true" patchSize="5.0" fontSize="10" wrappingAllowedY="false" width="400" tickCounterLabel="ticks" maxPycor="80" updateMode="1" maxPxcor="80" minPxcor="0" />
+    <button x="10" y="10" height="40" disableUntilTicks="false" forever="false" kind="Observer" width="80">setup</button>
+  </widgets>
+  <info><![CDATA[Test Model]]></info>
+  <turtleShapes>
+    <shape name="default" rotatable="true" editableColorIndex="0">
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="150" y="5"></point>
+        <point x="40" y="280"></point>
+        <point x="150" y="200"></point>
+        <point x="260" y="280"></point>
+      </polygon>
+    </shape>
+  </turtleShapes>
+  <linkShapes>
+    <shape name="default" curviness="0.0">
+      <lines>
+        <line x="-0.2" visible="false">
+          <dash value="0.0" />
+          <dash value="1.0" />
+        </line>
+        <line x="0.0" visible="true">
+          <dash value="1.0" />
+          <dash value="0.0" />
+        </line>
+        <line x="0.2" visible="false">
+          <dash value="0.0" />
+          <dash value="1.0" />
+        </line>
+      </lines>
+      <indicator>
+        <shape name="link direction" rotatable="true" editableColorIndex="0">
+          <line endX="90" startY="150" marked="true" color="-1920102913" endY="180" startX="150" />
+          <line endX="210" startY="150" marked="true" color="-1920102913" endY="180" startX="150" />
+        </shape>
+      </indicator>
+    </shape>
+  </linkShapes>
+  <experiments>
+    <experiment name="test-experiment" repetitions="1" sequentialRunOrder="true" runMetricsEveryStep="false" timeLimit="1">
+      <setup>setup</setup>
+      <go></go>
+      <metrics>
+        <metric>ticks</metric>
+      </metrics>
+    </experiment>
+  </experiments>
+</model>

@@ -1,0 +1,11 @@
+rank,node_id,lat,lon,betweenness,degree,degree_centrality,roads
+1,1631302035,8.6004355,76.9942925,0.281713,4,0.000397,"Nedumangad Vattappara Road, Old Rajapatha Road"
+2,1625120560,8.6084207,77.0049029,0.215608,3,0.000298,"Kallingal - Pazhakutty Road, Nedumangad - Pulippara - Anad Road"
+3,7081990948,8.6110027,77.0120336,0.21287,3,0.000298,"Nedumagad - Karippoor Road, Unclassified Road"
+4,7165955454,8.6089451,77.0085893,0.209061,3,0.000298,"Nedumagad - Karippoor Road, residential road"
+5,1499032393,8.6040081,76.9979976,0.186661,3,0.000298,"Nedumangad - Shorlacode Road, Thiruvanathapuram - Thenmala Road SH 2"
+6,7082003001,8.6129839,77.0137154,0.18396,2,0.000198,Nedumagad - Karippoor Road
+7,7081990944,8.6129976,77.0165562,0.178057,3,0.000298,"Nedumagad - Karippoor Road, Residential Road"
+8,2889270423,8.6021825,76.996134,0.176316,2,0.000198,Thiruvanathapuram - Thenmala Road SH 2
+9,7082002968,8.6137284,77.0198496,0.169616,3,0.000298,"Nedumagad - Karippoor Road, Tertiary Road"
+10,7054214770,8.6013333,76.9916946,0.148845,3,0.000298,"Nedumangad Vattappara Road, Residential Road"

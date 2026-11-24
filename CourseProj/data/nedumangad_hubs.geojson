@@ -1,0 +1,1031 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.002361,
+          8.604988
+        ]
+      },
+      "properties": {
+        "id": 1,
+        "name": "Margin free",
+        "type": "supermarket",
+        "category": "Commercial",
+        "capacity": 150,
+        "lon": 77.002361,
+        "lat": 8.604988
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.003174,
+          8.607842
+        ]
+      },
+      "properties": {
+        "id": 2,
+        "name": "State Bank of India",
+        "type": "bank",
+        "category": "Commercial",
+        "capacity": 80,
+        "lon": 77.003174,
+        "lat": 8.607842
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.99149,
+          8.600374
+        ]
+      },
+      "properties": {
+        "id": 3,
+        "name": "Govt College Nedumangad",
+        "type": "college",
+        "category": "Education",
+        "capacity": 350,
+        "lon": 76.99149,
+        "lat": 8.600374
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.992477,
+          8.60187
+        ]
+      },
+      "properties": {
+        "id": 4,
+        "name": "RIMS",
+        "type": "hospital",
+        "category": "Healthcare",
+        "capacity": 350,
+        "lon": 76.992477,
+        "lat": 8.60187
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.002323,
+          8.608047
+        ]
+      },
+      "properties": {
+        "id": 5,
+        "name": "Place of Worship",
+        "type": "place_of_worship",
+        "category": "Worship",
+        "capacity": 180,
+        "lon": 77.002323,
+        "lat": 8.608047
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.000773,
+          8.603885
+        ]
+      },
+      "properties": {
+        "id": 6,
+        "name": "Government District Hospital",
+        "type": "hospital",
+        "category": "Healthcare",
+        "capacity": 350,
+        "lon": 77.000773,
+        "lat": 8.603885
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.001757,
+          8.603479
+        ]
+      },
+      "properties": {
+        "id": 7,
+        "name": "Markaz Masjid",
+        "type": "place_of_worship",
+        "category": "Worship",
+        "capacity": 180,
+        "lon": 77.001757,
+        "lat": 8.603479
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.99442,
+          8.600574
+        ]
+      },
+      "properties": {
+        "id": 8,
+        "name": "Salem Super Market",
+        "type": "supermarket",
+        "category": "Commercial",
+        "capacity": 150,
+        "lon": 76.99442,
+        "lat": 8.600574
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.997187,
+          8.605548
+        ]
+      },
+      "properties": {
+        "id": 9,
+        "name": "Place of Worship",
+        "type": "place_of_worship",
+        "category": "Worship",
+        "capacity": 180,
+        "lon": 76.997187,
+        "lat": 8.605548
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.007719,
+          8.605242
+        ]
+      },
+      "properties": {
+        "id": 10,
+        "name": "Parandode Devi Temple",
+        "type": "place_of_worship",
+        "category": "Worship",
+        "capacity": 180,
+        "lon": 77.007719,
+        "lat": 8.605242
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.997783,
+          8.610805
+        ]
+      },
+      "properties": {
+        "id": 11,
+        "name": "Vanchinadu Service Cooperative Bank",
+        "type": "bank",
+        "category": "Commercial",
+        "capacity": 80,
+        "lon": 76.997783,
+        "lat": 8.610805
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.994469,
+          8.609579
+        ]
+      },
+      "properties": {
+        "id": 12,
+        "name": "Uliyoor Kaippally Sree Mahadeva Temple",
+        "type": "place_of_worship",
+        "category": "Worship",
+        "capacity": 180,
+        "lon": 76.994469,
+        "lat": 8.609579
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.005826,
+          8.601667
+        ]
+      },
+      "properties": {
+        "id": 13,
+        "name": "L M A Lower Primary School",
+        "type": "school",
+        "category": "Education",
+        "capacity": 250,
+        "lon": 77.005826,
+        "lat": 8.601667
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.006737,
+          8.598405
+        ]
+      },
+      "properties": {
+        "id": 14,
+        "name": "Lutheran Church Mancha",
+        "type": "place_of_worship",
+        "category": "Worship",
+        "capacity": 180,
+        "lon": 77.006737,
+        "lat": 8.598405
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.004354,
+          8.603686
+        ]
+      },
+      "properties": {
+        "id": 15,
+        "name": "Bank of India",
+        "type": "bank",
+        "category": "Commercial",
+        "capacity": 80,
+        "lon": 77.004354,
+        "lat": 8.603686
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.006647,
+          8.601796
+        ]
+      },
+      "properties": {
+        "id": 16,
+        "name": "temple",
+        "type": "place_of_worship",
+        "category": "Worship",
+        "capacity": 180,
+        "lon": 77.006647,
+        "lat": 8.601796
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.003578,
+          8.605466
+        ]
+      },
+      "properties": {
+        "id": 17,
+        "name": "Kerala State Transport Corporation Bus Stand",
+        "type": "bus_station",
+        "category": "Transit",
+        "capacity": 350,
+        "lon": 77.003578,
+        "lat": 8.605466
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.000558,
+          8.610211
+        ]
+      },
+      "properties": {
+        "id": 18,
+        "name": "sri mutharamman temple",
+        "type": "place_of_worship",
+        "category": "Worship",
+        "capacity": 180,
+        "lon": 77.000558,
+        "lat": 8.610211
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.000588,
+          8.610416
+        ]
+      },
+      "properties": {
+        "id": 19,
+        "name": "Place of Worship",
+        "type": "place_of_worship",
+        "category": "Worship",
+        "capacity": 180,
+        "lon": 77.000588,
+        "lat": 8.610416
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.997844,
+          8.612122
+        ]
+      },
+      "properties": {
+        "id": 20,
+        "name": "Kerala Grameena Bank",
+        "type": "bank",
+        "category": "Commercial",
+        "capacity": 80,
+        "lon": 76.997844,
+        "lat": 8.612122
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.030587,
+          8.635384
+        ]
+      },
+      "properties": {
+        "id": 21,
+        "name": "Place of Worship",
+        "type": "place_of_worship",
+        "category": "Worship",
+        "capacity": 180,
+        "lon": 77.030587,
+        "lat": 8.635384
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.022284,
+          8.621182
+        ]
+      },
+      "properties": {
+        "id": 22,
+        "name": "Place of Worship",
+        "type": "place_of_worship",
+        "category": "Worship",
+        "capacity": 180,
+        "lon": 77.022284,
+        "lat": 8.621182
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.997777,
+          8.612781
+        ]
+      },
+      "properties": {
+        "id": 23,
+        "name": "Bini Homeo Clinic",
+        "type": "clinic",
+        "category": "Healthcare",
+        "capacity": 80,
+        "lon": 76.997777,
+        "lat": 8.612781
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.994458,
+          8.609795
+        ]
+      },
+      "properties": {
+        "id": 24,
+        "name": "Local Market / Store",
+        "type": "convenience",
+        "category": "Commercial",
+        "capacity": 60,
+        "lon": 76.994458,
+        "lat": 8.609795
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.993589,
+          8.607268
+        ]
+      },
+      "properties": {
+        "id": 25,
+        "name": "Local Market / Store",
+        "type": "convenience",
+        "category": "Commercial",
+        "capacity": 60,
+        "lon": 76.993589,
+        "lat": 8.607268
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.99564,
+          8.604816
+        ]
+      },
+      "properties": {
+        "id": 26,
+        "name": "Local Market / Store",
+        "type": "convenience",
+        "category": "Commercial",
+        "capacity": 60,
+        "lon": 76.99564,
+        "lat": 8.604816
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.995659,
+          8.604692
+        ]
+      },
+      "properties": {
+        "id": 27,
+        "name": "Local Market / Store",
+        "type": "convenience",
+        "category": "Commercial",
+        "capacity": 60,
+        "lon": 76.995659,
+        "lat": 8.604692
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.995655,
+          8.604537
+        ]
+      },
+      "properties": {
+        "id": 28,
+        "name": "Local Market / Store",
+        "type": "convenience",
+        "category": "Commercial",
+        "capacity": 60,
+        "lon": 76.995655,
+        "lat": 8.604537
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.99433,
+          8.600345
+        ]
+      },
+      "properties": {
+        "id": 29,
+        "name": "Local Market / Store",
+        "type": "convenience",
+        "category": "Commercial",
+        "capacity": 60,
+        "lon": 76.99433,
+        "lat": 8.600345
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.994404,
+          8.600339
+        ]
+      },
+      "properties": {
+        "id": 30,
+        "name": "Local Market / Store",
+        "type": "convenience",
+        "category": "Commercial",
+        "capacity": 60,
+        "lon": 76.994404,
+        "lat": 8.600339
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.994501,
+          8.600346
+        ]
+      },
+      "properties": {
+        "id": 31,
+        "name": "Local Market / Store",
+        "type": "convenience",
+        "category": "Commercial",
+        "capacity": 60,
+        "lon": 76.994501,
+        "lat": 8.600346
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.004635,
+          8.60855
+        ]
+      },
+      "properties": {
+        "id": 32,
+        "name": "Federal Bank",
+        "type": "bank",
+        "category": "Commercial",
+        "capacity": 80,
+        "lon": 77.004635,
+        "lat": 8.60855
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.998004,
+          8.604154
+        ]
+      },
+      "properties": {
+        "id": 33,
+        "name": "Nedumangad Pharmacy",
+        "type": "pharmacy",
+        "category": "Healthcare",
+        "capacity": 40,
+        "lon": 76.998004,
+        "lat": 8.604154
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.002723,
+          8.60339
+        ]
+      },
+      "properties": {
+        "id": 34,
+        "name": "ICICI Bank , Nedumangad",
+        "type": "bank",
+        "category": "Commercial",
+        "capacity": 80,
+        "lon": 77.002723,
+        "lat": 8.60339
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.999348,
+          8.603877
+        ]
+      },
+      "properties": {
+        "id": 35,
+        "name": "Markaz Masjid",
+        "type": "place_of_worship",
+        "category": "Worship",
+        "capacity": 180,
+        "lon": 76.999348,
+        "lat": 8.603877
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.990422,
+          8.594531
+        ]
+      },
+      "properties": {
+        "id": 36,
+        "name": "Anganavadi",
+        "type": "kindergarten",
+        "category": "Education",
+        "capacity": 60,
+        "lon": 76.990422,
+        "lat": 8.594531
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.996151,
+          8.600833
+        ]
+      },
+      "properties": {
+        "id": 37,
+        "name": "Nedumangad Pharmacy",
+        "type": "pharmacy",
+        "category": "Healthcare",
+        "capacity": 40,
+        "lon": 76.996151,
+        "lat": 8.600833
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.011441,
+          8.594144
+        ]
+      },
+      "properties": {
+        "id": 38,
+        "name": "Gayathri finance",
+        "type": "bank",
+        "category": "Commercial",
+        "capacity": 80,
+        "lon": 77.011441,
+        "lat": 8.594144
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.003101,
+          8.606438
+        ]
+      },
+      "properties": {
+        "id": 39,
+        "name": "Aravind finance",
+        "type": "bank",
+        "category": "Commercial",
+        "capacity": 80,
+        "lon": 77.003101,
+        "lat": 8.606438
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.997483,
+          8.603802
+        ]
+      },
+      "properties": {
+        "id": 40,
+        "name": "Corporation Bank",
+        "type": "bank",
+        "category": "Commercial",
+        "capacity": 80,
+        "lon": 76.997483,
+        "lat": 8.603802
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.995637,
+          8.5834
+        ]
+      },
+      "properties": {
+        "id": 41,
+        "name": "Thycavu Masjid",
+        "type": "place_of_worship",
+        "category": "Worship",
+        "capacity": 180,
+        "lon": 76.995637,
+        "lat": 8.5834
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.998173,
+          8.609163
+        ]
+      },
+      "properties": {
+        "id": 42,
+        "name": "Sahari Supermarket",
+        "type": "supermarket",
+        "category": "Commercial",
+        "capacity": 150,
+        "lon": 76.998173,
+        "lat": 8.609163
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.006905,
+          8.602414
+        ]
+      },
+      "properties": {
+        "id": 43,
+        "name": "Bank of India",
+        "type": "bank",
+        "category": "Commercial",
+        "capacity": 80,
+        "lon": 77.006905,
+        "lat": 8.602414
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.983151,
+          8.621281
+        ]
+      },
+      "properties": {
+        "id": 44,
+        "name": "Local Market / Store",
+        "type": "convenience",
+        "category": "Commercial",
+        "capacity": 60,
+        "lon": 76.983151,
+        "lat": 8.621281
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.026453,
+          8.634715
+        ]
+      },
+      "properties": {
+        "id": 45,
+        "name": "Place of Worship",
+        "type": "place_of_worship",
+        "category": "Worship",
+        "capacity": 180,
+        "lon": 77.026453,
+        "lat": 8.634715
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.966478,
+          8.626283
+        ]
+      },
+      "properties": {
+        "id": 46,
+        "name": "Place of Worship",
+        "type": "place_of_worship",
+        "category": "Worship",
+        "capacity": 180,
+        "lon": 76.966478,
+        "lat": 8.626283
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.027977,
+          8.634527
+        ]
+      },
+      "properties": {
+        "id": 47,
+        "name": "Local Market / Store",
+        "type": "convenience",
+        "category": "Commercial",
+        "capacity": 60,
+        "lon": 77.027977,
+        "lat": 8.634527
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.027507,
+          8.63465
+        ]
+      },
+      "properties": {
+        "id": 48,
+        "name": "Local Market / Store",
+        "type": "convenience",
+        "category": "Commercial",
+        "capacity": 60,
+        "lon": 77.027507,
+        "lat": 8.63465
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.977037,
+          8.624294
+        ]
+      },
+      "properties": {
+        "id": 49,
+        "name": "Local Market / Store",
+        "type": "convenience",
+        "category": "Commercial",
+        "capacity": 60,
+        "lon": 76.977037,
+        "lat": 8.624294
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.996268,
+          8.600777
+        ]
+      },
+      "properties": {
+        "id": 50,
+        "name": "Medical Store",
+        "type": "pharmacy",
+        "category": "Healthcare",
+        "capacity": 40,
+        "lon": 76.996268,
+        "lat": 8.600777
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.0015,
+          8.6012
+        ]
+      },
+      "properties": {
+        "name": "Nedumangad Taluk Hospital",
+        "type": "hospital",
+        "category": "Healthcare",
+        "capacity": 450,
+        "lat": 8.6012,
+        "lon": 77.0015,
+        "id": 51
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.0125,
+          8.6085
+        ]
+      },
+      "properties": {
+        "name": "Pazhakutty Market Junction",
+        "type": "marketplace",
+        "category": "Commercial",
+        "capacity": 300,
+        "lat": 8.6085,
+        "lon": 77.0125,
+        "id": 52
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          76.992,
+          8.595
+        ]
+      },
+      "properties": {
+        "name": "Valicode Commercial Hub",
+        "type": "marketplace",
+        "category": "Commercial",
+        "capacity": 250,
+        "lat": 8.595,
+        "lon": 76.992,
+        "id": 53
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          77.0005,
+          8.6025
+        ]
+      },
+      "properties": {
+        "name": "Nedumangad KSRTC Bus Station",
+        "type": "bus_station",
+        "category": "Transit",
+        "capacity": 350,
+        "lat": 8.6025,
+        "lon": 77.0005,
+        "id": 54
+      }
+    }
+  ]
+}

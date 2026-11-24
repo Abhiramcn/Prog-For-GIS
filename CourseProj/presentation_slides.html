@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GIS-ABM Epidemic Simulation Presentation — Nedumangad Municipality</title>
+<style>
+  :root {
+    --primary: #1a365d;
+    --accent: #c53030;
+    --secondary: #2b6cb0;
+    --bg: #0f172a;
+    --card-bg: #1e293b;
+    --text: #f8fafc;
+    --muted: #94a3b8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  #presentation-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+  }
+  .slide {
+    display: none;
+    background: var(--card-bg);
+    border: 1px solid #334155;
+    border-radius: 16px;
+    width: 90vw;
+    max-width: 1200px;
+    height: 82vh;
+    padding: 40px 50px;
+    overflow-y: auto;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+  }
+  .slide.active {
+    display: flex;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .slide-header {
+    border-bottom: 2px solid #334155;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .slide-category {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #38bdf8;
+    font-weight: 700;
+  }
+  h1 { font-size: 30px; color: #f1f5f9; margin-top: 5px; }
+  h2 { font-size: 23px; color: #e2e8f0; margin-bottom: 12px; }
+  p, li { font-size: 16px; line-height: 1.55; color: #cbd5e1; }
+  ul { margin-left: 22px; margin-bottom: 15px; }
+  li { margin-bottom: 8px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 12px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-top: 12px; }
+  .card {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    padding: 16px 20px;
+  }
+  .card h3 { color: #38bdf8; font-size: 17px; margin-bottom: 8px; }
+  .badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    background: #0284c7;
+    color: white;
+  }
+  .badge-sample {
+    background: #b45309;
+    color: white;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    background: #0f172a;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  th, td {
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid #334155;
+    font-size: 14px;
+  }
+  th { background: #1e293b; color: #38bdf8; font-weight: 600; }
+  .formula-box {
+    background: #090d16;
+    border-left: 4px solid #38bdf8;
+    padding: 12px 18px;
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    color: #e2e8f0;
+    margin: 12px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #0b1120;
+    border-top: 1px solid #1e293b;
+  }
+  .btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  .btn:hover { background: #1d4ed8; }
+  .progress-info { color: var(--muted); font-size: 15px; font-weight: 500; }
+  .speaker-note {
+    margin-top: auto;
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px dashed #0284c7;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 13.5px;
+    color: #7dd3fc;
+  }
+</style>
+</head>
+<body>
+
+<div id="presentation-container">
+
+  <!-- Slide 1 -->
+  <div class="slide active">
+    <div class="slide-header">
+      <span class="slide-category">Course Project Presentation • GIS & Spatial Modeling</span>
+      <span class="badge badge-sample">Exploratory Sample Study</span>
+    </div>
+    <h1 style="font-size: 30px; margin-bottom: 12px;">A GIS-Integrated Agent-Based Model for Simulating the Spatial Spread of an Epidemic in Nedumangad Municipality, Kerala</h1>
+    <p style="color: #94a3b8; font-size: 15px; margin-bottom: 15px;"><em>A Methodological Framework Demonstrating GIS Vector & Raster Integration with Diurnal Agent Simulations</em></p>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Core Technologies</h3>
+        <ul>
+          <li><strong>GIS Framework:</strong> OpenStreetMap 0.6 API, PyShp, NumPy, NetworkX</li>
+          <li><strong>ABM Platform:</strong> NetLogo 7.0.4 with <code>extensions [ gis ]</code></li>
+          <li><strong>Simulation Form:</strong> Scaled Agent Diurnal SEIR Model</li>
+          <li><strong>Study Area:</strong> Nedumangad Municipality, Kerala ($32.52\text{ km}^2$)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Academic Nature of the Study</h3>
+        <ul>
+          <li><strong>Sample-Based Prototype:</strong> Demonstrates spatial ABM integration methodology rather than clinical epidemic forecasts.</li>
+          <li><strong>Comparative Focus:</strong> Evaluates relative policy sensitivity across intervention scenarios.</li>
+          <li><strong>Authentic Data Ingestion:</strong> Grounded on real OpenStreetMap road networks and surveyed activity hubs.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="speaker-note">
+      <strong>Speaker Note:</strong> "Good morning. Today I will present our project integrating GIS with Agent-Based Modeling using Nedumangad Municipality as our landscape. This is an exploratory sample model and methodological proof-of-concept demonstrating how spatial infrastructure shapes relative transmission dynamics."
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide">
+    <div class="slide-header">
+      <span class="slide-category">Motivation & Academic Scope</span>
+      <span class="progress-info">Slide 2 / 12</span>
+    </div>
+    <h2>Problem Motivation & Why Nedumangad?</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>The Homogeneous Mixing Fallacy</h3>
+        <ul>
+          <li>Classical ODE models ($dS/dt = -\beta SI/N$) assume everyone in a town meets with equal probability.</li>
+          <li>They cannot represent road choke points, population density gradients, or high-contact facility mixing.</li>
+          <li>Cannot inform spatial decision-making like road barricades or targeted hub closures.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Why Nedumangad Municipality, Kerala?</h3>
+        <ul>
+          <li><strong>Geographical Node:</strong> Primary transit junction connecting highland agro-ecological zones (Ponmudi, Vithura) with the capital city (Thiruvananthapuram).</li>
+          <li><strong>Semi-Urban Landscape:</strong> High-density commercial core surrounded by semi-rural wards.</li>
+          <li><strong>Kerala's Local Self-Governance:</strong> Decentralized municipal administration requires spatial decision support.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="speaker-note">
+      <strong>Speaker Note:</strong> "Classical mathematical models can estimate aggregate numbers, but they cannot tell municipal officers which road or market is accelerating the spread. We bridge this spatial gap."
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide">
+    <div class="slide-header">
+      <span class="slide-category">Data Provenance & Scientific Lineage</span>
+      <span class="progress-info">Slide 3 / 12</span>
+    </div>
+    <h2>To What Degree is Each Dataset Accurate?</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Dataset</th>
+          <th>Degree of Accuracy</th>
+          <th>Source / Generation Method</th>
+          <th>Scientific Role & Caveats</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Road Network</strong></td>
+          <td><span class="badge" style="background:#16a34a;">High</span></td>
+          <td>OpenStreetMap 2026 Planet Ingest</td>
+          <td>Real GPS coordinates; 1,064 road lines; verified multi-tier speeds. Unmapped minor footpaths may exist.</td>
+        </tr>
+        <tr>
+          <td><strong>Major Hubs / Landmarks</strong></td>
+          <td><span class="badge" style="background:#16a34a;">High</span></td>
+          <td>OSM Surveyed Features & Ground Truth</td>
+          <td>Exact coordinates for Taluk Hospital, KSRTC Terminal, Valiya Chanda Market, Town Hall, major HSS schools.</td>
+        </tr>
+        <tr>
+          <td><strong>Secondary Shops & POIs</strong></td>
+          <td><span class="badge" style="background:#eab308; color:#0f172a;">Sample</span></td>
+          <td>OSM Tagged Amenities (205 Hubs)</td>
+          <td>Representative sample of commercial, religious, and civic facilities; not an exhaustive business census.</td>
+        </tr>
+        <tr>
+          <td><strong>Municipal & Ward Boundaries (42 Wards)</strong></td>
+          <td><span class="badge" style="background:#22c55e;">100% Real</span></td>
+          <td>Delimitation Commission, Kerala (K-SMART 2024)</td>
+          <td>Official government cadastral polygons directly from K-SMART portal; 42 wards dissolved to true municipal boundary.</td>
+        </tr>
+        <tr>
+          <td><strong>Population Density Surface</strong></td>
+          <td><span class="badge" style="background:#f97316;">Modeled Proxy</span></td>
+          <td>Multi-Kernel Gaussian calibrated to Census</td>
+          <td>Macro spatial surface ($120 \times 120$ cells) normalized to 60,161 residents; not a house-by-house census register.</td>
+        </tr>
+        <tr>
+          <td><strong>Agent Sample Population</strong></td>
+          <td><span class="badge" style="background:#a855f7;">Scaled Sample</span></td>
+          <td>Scaled Computational Agents ($N = 1,500-3,000$)</td>
+          <td>Representative sample enabling real-time desktop simulation. Results represent sample dynamics.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="speaker-note">
+      <strong>Speaker Note:</strong> "Transparency in spatial data lineage is vital: our roads and major landmarks have high empirical accuracy, while wards and population surfaces serve as modeled spatial proxies, and our agents represent a scaled computational sample."
+    </div>
+  </div>
+
+  <!-- Slide 4 -->
+  <div class="slide">
+    <div class="slide-header">
+      <span class="slide-category">System Architecture</span>
+      <span class="progress-info">Slide 4 / 12</span>
+    </div>
+    <h2>End-to-End Processing & Simulation Workflow</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>1. Data Acquisition</h3>
+        <p><code>download_osm_data.py</code> fetches 49,220 nodes and 4,744 ways across Nedumangad's bounding box.</p>
+      </div>
+      <div class="card">
+        <h3>2. GIS Layer Processing</h3>
+        <p><code>process_gis_data.py</code> builds Shapefiles (`.shp`), `.prj`, population raster (`.asc`), and network topology graph.</p>
+      </div>
+      <div class="card">
+        <h3>3. Dual Execution Engines</h3>
+        <p><code>Nedumangad_Epidemic_GIS.nlogox</code> (interactive NetLogo 7 GUI) & <code>simulate_epidemic_python.py</code> (batch scenarios).</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top: 15px;">
+      <h3>Key Spatial Outputs in <code>data/</code></h3>
+      <p><code>nedumangad_boundary.shp</code> | <code>nedumangad_roads.shp</code> | <code>nedumangad_hubs.shp</code> | <code>nedumangad_wards.shp</code> | <code>nedumangad_population.asc</code> | <code>road_network.json</code></p>
+    </div>
+    <div class="speaker-note">
+      <strong>Speaker Note:</strong> "Our workflow is fully modular: spatial data processing feeds into graph analytics and dual simulation engines in Python and NetLogo 7."
+    </div>
+  </div>
+
+  <!-- Slide 5 -->
+  <div class="slide">
+    <div class="slide-header">
+      <span class="slide-category">Methodology • Spatial Network Analytics</span>
+      <span class="progress-info">Slide 5 / 12</span>
+    </div>
+    <h2>Road Network Centrality & Bottlenecks</h2>
+    <p>We built a graph $G = (V, E)$ of 14,218 junctions and 14,481 links to calculate betweenness centrality:</p>
+    <div class="formula-box">
+      C_B(v) = &sum; [ &sigma;_st(v) / &sigma;_st ] for all s &ne; v &ne; t
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Intersection / Corridor</th>
+          <th>Betweenness Score</th>
+          <th>Topological Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Old Rajapatha Rd & Nedumangad-Vattappara Rd</td>
+          <td>0.27650</td>
+          <td>Primary Choke Point connecting southern catchments to bazaar</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>8th Stone – Mulamukku Road Junction</td>
+          <td>0.23637</td>
+          <td>Critical lateral corridor between residential belts and perimeter</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Old Rajapatha Connector</td>
+          <td>0.22098</td>
+          <td>Secondary artery funneling cross-municipal traffic</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="speaker-note">
+      <strong>Speaker Note:</strong> "Topological betweenness proves that traffic is heavily concentrated: just three intersections channel over half the municipal movement."
+    </div>
+  </div>
+
+  <!-- Slide 6 -->
+  <div class="slide">
+    <div class="slide-header">
+      <span class="slide-category">Methodology • Diurnal ABM Engine</span>
+      <span class="progress-info">Slide 6 / 12</span>
+    </div>
+    <h2>Agent Mobility & Transmission Formulation</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Diurnal Activity Routine</h3>
+        <ul>
+          <li><strong>00:00 - 07:00 (Night):</strong> Agents rest at residential <code>home-patch</code>.</li>
+          <li><strong>08:00 - 09:00 (Morning Commute):</strong> Transit along road network.</li>
+          <li><strong>10:00 - 16:00 (Daytime Hub Mixing):</strong> Dwell at assigned activity hubs. Intense contact occurs.</li>
+          <li><strong>17:00 - 18:00 (Evening Commute):</strong> Return transit along road lines.</li>
+          <li><strong>19:00 - 23:00 (Neighborhood):</strong> Local residential walks.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Dual Transmission Mechanics</h3>
+        <p><strong>1. Indoor Hub Superspreading:</strong></p>
+        <div class="formula-box">
+          P_hub = 1 - (1 - &beta;_hub &times; Risk_h &times; &mu;_crowd / 2)^I_h &times; (1 - &eta;_mask)
+        </div>
+        <p><strong>2. Street Encounters:</strong></p>
+        <div class="formula-box">
+          P_street = &beta;_street &times; (1 - &eta;_mask,sus) &times; (1 - &eta;_mask,inf)
+        </div>
+      </div>
+    </div>
+    <div class="speaker-note">
+      <strong>Speaker Note:</strong> "Agents follow daily rhythms. Transmission occurs in crowded indoor facilities governed by non-linear saturation, as well as outdoor street encounters."
+    </div>
+  </div>
+
+  <!-- Slide 7 -->
+  <div class="slide">
+    <div class="slide-header">
+      <span class="slide-category">Experimental Policy Sensitivity</span>
+      <span class="progress-info">Slide 7 / 12</span>
+    </div>
+    <h2>4 Comparative Policy Scenarios (Sample Benchmark)</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Scenario A: Baseline (Unmitigated)</h3>
+        <p>No travel bans, no closures, no active quarantine. Serves as the experimental control benchmark for natural spread in our sample.</p>
+      </div>
+      <div class="card">
+        <h3>Scenario B: Targeted Hub Closures (Day 8)</h3>
+        <p>Shuttering high-density commercial markets (Valiya Chanda, Pazhakutty) and KSRTC bus stand. Domestic local travel permitted.</p>
+      </div>
+      <div class="card">
+        <h3>Scenario C: Blanket Municipal Lockdown (Day 10)</h3>
+        <p>75% movement restriction across all wards. Non-essential vehicular and pedestrian movement curtailed.</p>
+      </div>
+      <div class="card">
+        <h3>Scenario D: Active Testing & Quarantine (Day 7)</h3>
+        <p>35%-45% active infectious case detection with strict home/hospital isolation. General road mobility stays open.</p>
+      </div>
+    </div>
+    <div class="speaker-note">
+      <strong>Speaker Note:</strong> "We test four stylized policy interventions. Rather than focusing on exact case numbers, we analyze relative policy performance and curve shapes."
+    </div>
+  </div>
+
+  <!-- Slide 8 -->
+  <div class="slide">
+    <div class="slide-header">
+      <span class="slide-category">Results & Comparative Dynamics</span>
+      <span class="progress-info">Slide 8 / 12</span>
+    </div>
+    <h2>Relative Policy Sensitivity in Sample Model</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Intervention Scenario</th>
+          <th>Peak Active Cases (Sample)</th>
+          <th>Peak Day</th>
+          <th>Sample Attack Rate</th>
+          <th>Relative Infection Impact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Scenario A: Baseline</strong></td>
+          <td>231</td>
+          <td>Day 13</td>
+          <td>13.1%</td>
+          <td>Reference Benchmark</td>
+        </tr>
+        <tr>
+          <td><strong>Scenario B: Hub Closures</strong></td>
+          <td>229</td>
+          <td>Day 12</td>
+          <td>12.1%</td>
+          <td>-7.6% (Moderate suppression)</td>
+        </tr>
+        <tr>
+          <td><strong>Scenario C: Blanket Lockdown</strong></td>
+          <td>207</td>
+          <td>Day 12</td>
+          <td>16.4%</td>
+          <td>Prolonged transmission tail</td>
+        </tr>
+        <tr style="background: rgba(34, 197, 94, 0.15);">
+          <td><strong>Scenario D: Testing & Quarantine</strong></td>
+          <td><strong>168</strong></td>
+          <td><strong>Day 10</strong></td>
+          <td><strong>7.8%</strong></td>
+          <td><strong>-40.5% (Substantial reduction)</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="card" style="margin-top: 15px;">
+      <h3>Scientific Insight</h3>
+      <p>In our sample simulation, active testing and quarantine achieves a <strong>40.5% relative reduction</strong> in total infections by directly removing spreaders before they reach crowded hubs, outperforming a blunt curfew.</p>
+    </div>
+    <div class="speaker-note">
+      <strong>Speaker Note:</strong> "Here we focus on relative comparisons. Testing and quarantine reduces cumulative attack rates by 40% compared to baseline, outperforming blanket lock downs."
+    </div>
+  </div>
+
+  <!-- Slide 9 -->
+  <div class="slide">
+    <div class="slide-header">
+      <span class="slide-category">Results • Spatial Patterns</span>
+      <span class="progress-info">Slide 9 / 12</span>
+    </div>
+    <h2>Spatial Gradients: Urban Core vs. Rural Periphery</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Central Commercial Core (Elevated Relative Spread)</h3>
+        <ul>
+          <li>Wards centered on the market and transit nucleus (Valiya Chanda, Town Ward, Melamcode, Pazhakutty).</li>
+          <li>Exhibit higher relative attack rates in the sample ($\approx 18\% - 22\%$).</li>
+          <li>Driven by settlement density and high commuter footfall from outer catchments.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Peripheral & Rural Wards (Naturally Insulated)</h3>
+        <ul>
+          <li>Peripheral wards along the northern and eastern municipal limits (Kurupuzha, Vettinadu, Panavoor Border, Palode Road).</li>
+          <li>Sustain significantly lower sample attack rates ($\approx 4\% - 7\%$).</li>
+          <li>Protected by spatial buffer, low building density, and dispersed agricultural settlements.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card" style="margin-top: 15px;">
+      <p style="font-size: 14.5px; color: #38bdf8;"><strong>Methodological Takeaway:</strong> The model demonstrates how spatial settlement patterns create natural disease gradients, providing computational evidence that localized micro-containment cordoning is more rational than municipal-wide shutdowns.</p>
+    </div>
+    <div class="speaker-note">
+      <strong>Speaker Note:</strong> "The spatial pattern shows an illustrative gradient: central commercial wards sustain elevated transmission, while outer agricultural wards remain naturally buffered, supporting targeted micro-containment."
+    </div>
+  </div>
+
+  <!-- Slide 10 -->
+  <div class="slide">
+    <div class="slide-header">
+      <span class="slide-category">Results • Healthcare Accessibility</span>
+      <span class="progress-info">Slide 10 / 12</span>
+    </div>
+    <h2>Healthcare Accessibility & Hospital Surge Modeling</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Transit Distance to Taluk Hospital</h3>
+        <ul>
+          <li><strong>Closest Ward:</strong> Ward 18 (Aruvikkara West) — 0.27 km (~3 min)</li>
+          <li><strong>Furthest Ward:</strong> Ward 1 (Town North) — 4.19 km (~18 min)</li>
+          <li><strong>Average Ward Distance:</strong> 1.84 km</li>
+          <li>Highlights that peripheral wards require decentralized mobile fever clinics.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Stylized Surge Capacity Demonstration</h3>
+        <ul>
+          <li><strong>Illustrative Capacity Threshold:</strong> 120-bed benchmark</li>
+          <li>Demonstrates how unmitigated spread causes rapid hospital demand spikes.</li>
+          <li>Testing & quarantine flattens patient influx, maintaining bed solvency.</li>
+          <li><em>Caveat:</em> Used as a methodological demonstration, not an audited real-time DHS bed count.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="speaker-note">
+      <strong>Speaker Note:</strong> "We modeled accessibility to Taluk Hospital and demonstrated how an illustrative 120-bed surge threshold can be evaluated spatially to plan fever triage clinics."
+    </div>
+  </div>
+
+  <!-- Slide 11 -->
+  <div class="slide">
+    <div class="slide-header">
+      <span class="slide-category">Strategic Observations</span>
+      <span class="progress-info">Slide 11 / 12</span>
+    </div>
+    <h2>Top 5 Methodological & Strategic Observations</h2>
+    <ul style="font-size: 16.5px;">
+      <li><strong>1. Spatial Structure Shapes Transmission:</strong> Disease transmission funnels along major structural road corridors rather than diffusing uniformly.</li>
+      <li><strong>2. Activity Hubs Amplify Spread:</strong> High-contact facilities (markets, bus stands) act as multipliers; shuttering them provides substantial mitigation without general curfews.</li>
+      <li><strong>3. Active Case Removal Outperforms General Lockdowns:</strong> Testing and isolating active cases reduces cumulative infections far more effectively than blanket curfews.</li>
+      <li><strong>4. Spatial Heterogeneity Supports Micro-Containment:</strong> Distinct transmission gradients between commercial centers and rural peripheries justify ward-level cordoning over town-wide closures.</li>
+      <li><strong>5. Spatial Inequity Requires Decentralized Triage:</strong> Peripheral wards face longer travel distances to the town hospital, highlighting the need for mobile screening units during outbreaks.</li>
+    </ul>
+    <div class="speaker-note">
+      <strong>Speaker Note:</strong> "These five takeaways highlight the conceptual and practical insights gained from our spatial modeling approach."
+    </div>
+  </div>
+
+  <!-- Slide 12 -->
+  <div class="slide">
+    <div class="slide-header">
+      <span class="slide-category">Limitations & Conclusion</span>
+      <span class="progress-info">Slide 12 / 12</span>
+    </div>
+    <h2>Study Limitations & Conclusion</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Academic Limitations</h3>
+        <ul>
+          <li>Sample-based scaling ($N = 1,500 - 3,000$) rather than 1:1 census simulation.</li>
+          <li>Official 2024 Delimitation Commission (K-SMART) cadastral ward boundaries integrated.</li>
+          <li>Closed municipal boundary envelope (excludes external inter-district highway transit on SH-2).</li>
+          <li>Parameterized indoor risk rather than 3D CFD ventilation physics.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Future Research Roadmap</h3>
+        <ul>
+          <li>Integration of anonymized cellular GPS/CDR mobility matrices.</li>
+          <li>Official cadastral property tax GIS layers from Kerala LSGD.</li>
+          <li>Wastewater-based epidemiology (WBE) drainage modeling.</li>
+          <li>Vaccine prioritization modeling for frontline transport workers.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card" style="margin-top: 15px;">
+      <p style="font-size: 15px;"><strong>Conclusion:</strong> This project establishes a reproducible, open-source GIS-ABM framework for Nedumangad Municipality, proving that coupling spatial network topology with agent-based simulations provides actionable insights for spatial epidemic management.</p>
+    </div>
+    <div class="speaker-note">
+      <strong>Speaker Note:</strong> "In conclusion, our study demonstrates the power of GIS and Agent-Based Modeling. While framed as a sample model, it establishes an adaptable computational framework for municipal spatial planning. Thank you."
+    </div>
+  </div>
+
+</div>
+
+<!-- Navigation Controls -->
+<div class="controls">
+  <button class="btn" id="prevBtn" onclick="changeSlide(-1)">&larr; Previous Slide</button>
+  <div class="progress-info" id="slideCounter">Slide 1 of 12 (Use &larr; &rarr; arrow keys or buttons)</div>
+  <button class="btn" id="nextBtn" onclick="changeSlide(1)">Next Slide &rarr;</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const counter = document.getElementById('slideCounter');
+
+  function updateSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (n + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+    counter.textContent = `Slide ${currentSlide + 1} of ${slides.length} (Use ← → arrow keys or buttons)`;
+  }
+
+  function changeSlide(direction) {
+    updateSlide(currentSlide + direction);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+      changeSlide(1);
+    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      changeSlide(-1);
+    }
+  });
+</script>
+</body>
+</html>
