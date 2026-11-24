@@ -1,0 +1,11 @@
+A GIS-Integrated Agent-Based Model for Simulating the Spatial Spread of an Epidemic in Nedumangad Municipality, Kerala
+
+Abstract
+
+The spatial spread of infectious diseases is influenced by population distribution, human mobility and interactions between individuals. Understanding these factors is important for analysing epidemic dynamics and identifying areas that may be vulnerable to disease transmission. This project aims to develop a Geographic Information System (GIS)-integrated Agent-Based Model (ABM) to simulate the spread of an infectious disease in Nedumangad Municipality, Kerala.
+
+The proposed model uses geographical data, including municipal boundaries, road networks and population distribution, to construct a spatially realistic simulation environment. Individual people are represented as agents, each assigned a health status based on the Susceptible–Infected–Recovered (SIR) framework. Agents move within the study area following the available road network, and disease transmission is modelled through interactions between susceptible and infected individuals. Probabilistic infection and recovery mechanisms are incorporated to represent the stochastic nature of epidemic processes.
+
+The simulation will be implemented using NetLogo, with Python-based GIS tools employed for geographical data processing and preparation. The model will be used to investigate the influence of population density, movement patterns and transmission probability on the spatial and temporal evolution of an epidemic. The resulting simulations and statistical outputs will help identify potential infection hotspots and examine how geographical characteristics influence disease propagation.
+
+This study demonstrates how GIS and agent-based modelling can be integrated to provide a spatially explicit computational framework for understanding epidemic dynamics at the local level.
